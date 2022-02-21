@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\StaffsController;
+use App\Http\Controllers\LanguagesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('lang/{locale}', [LanguagesController::class, 'language']);
+
+Route::resource('staff', StaffsController::class);
