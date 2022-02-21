@@ -12,7 +12,9 @@ class Department extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-
+    protected $fillable = [
+        'name',
+    ];
     //Phương thức liên kết quan hệ 1-n
     public function staffs()
     {

@@ -11,6 +11,11 @@ class Staff extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
+    protected $fillable = [
+        'name', 
+        'address', 
+        'department_id',
+    ];
     //Phương thức liên kết quan hệ 1-n
     public function department()
     {
