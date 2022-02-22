@@ -22,6 +22,7 @@ class CreateStaffTable extends Migration
                 ->references('id')
                 ->on('departments')
                 ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

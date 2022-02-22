@@ -30,7 +30,7 @@
             <td>{{ $staff->id }}</td>
             <td>{{ $staff->name }}</td>
             <td>{{ $staff->address }}</td>
-            <td>{{ $staff->department_id }}</td>
+            <td>{{ $staff->department->name }}</td>
             <td>
                 <form action = "{{ route('staff.destroy', $staff->id) }}" method="POST">
                     <a class="btn btn-primary" href="{{ route('staff.edit', $staff->id) }}"> @lang('messages.edit')  </a>

@@ -18,6 +18,6 @@ class Department extends Model
     //Phương thức liên kết quan hệ 1-n
     public function staffs()
     {
-        return $this->hasMany(Staff::class, 'department_id');
+        return $this->hasMany(Staff::class);
     }
 }
