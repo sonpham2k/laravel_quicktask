@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <strong>@lang('messages.department'):</strong>
                     <select class="form-select" aria-label="Default select example" name="department" placeholder="@lang('messages.department')">
-                        <option>{{ $staff->department_id  }}</option>
+                        <option value="{{ $staff->department->id }}">{{ $staff->department->name  }}</option>
                         @foreach ($departments as $department)
                           <option value="{{ $department->id }}">{{ $department->name }}</option>
                         @endforeach

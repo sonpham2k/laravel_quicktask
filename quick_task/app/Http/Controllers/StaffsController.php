@@ -24,11 +24,13 @@ class StaffsController extends Controller
        return view('staff.create', $data);
     }
 
-    public function store(Request $request, ValidateRequest $request2)
+    public function store(Request $request)
     {
-        dd($request2);
-
-        Staff::create($request->all());
+        Staff::create([
+            'name' => $request->input('staffname'),
+            'address' => $request->input('address'),
+            'department_id' => $request->input('department'),
+        ]);
 
         return redirect()->route('staff.index');
     }
@@ -40,17 +42,18 @@ class StaffsController extends Controller
 
     public function edit(Staff $staff)
     {
-
         $data['departments'] = Department::simplePaginate(config('app.paginate'));
         return view('staff.edit', compact('staff'), $data);
     }
 
     public function update(Request $request, Staff $staff,ValidateRequest $request2)
     {
-        dd($request2);
-
-        $request->offsetUnset('_token');
-        Staff::where(['id'=>($staff->id)])->update($request->all());
+        Staff::where('id', $staff->id)
+            ->update([
+                'name' => $request->input('staffname'),
+                'address' => $request->input('address'),
+                'department_id' => $request->input('department'),
+            ]);
 
         return redirect()->route('staff.index')->with('success');        
     }

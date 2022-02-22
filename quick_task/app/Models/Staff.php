@@ -10,7 +10,6 @@ class Staff extends Model
     protected $table = 'staff';
     protected $primaryKey = 'id';
     protected $guarded = [];
-
     protected $fillable = [
         'name', 
         'address', 
@@ -19,6 +18,6 @@ class Staff extends Model
     //Phương thức liên kết quan hệ 1-n
     public function department()
     {
-        return $this->belongsTo(Department::class, 'id');
+        return $this->belongsTo(Department::class);
     }
 }
