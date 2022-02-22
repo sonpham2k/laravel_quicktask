@@ -14,8 +14,13 @@ return [
     'back' => 'Back',
     'fullname' => 'Full name',
     'submit' => 'Submit',
+    'add' => 'Add new',
     'fail' => 'Problems',
     'addSucess' => 'Add Sucessfully ',
     'editSucess' => 'Edit Sucessfully',
     'deleteSucess' => 'Delete Sucessfully',
+    'validate' => 'Please check agin data',
+    'required' => 'This field cannot be left blank',
+    'min' => 'This field must be at least 6 characters',
+    'string' => 'This field must be at string',
 ];

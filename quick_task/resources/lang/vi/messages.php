@@ -14,8 +14,13 @@ return [
     'back' => 'Quay lại',
     'fullname' => 'Họ và tên',
     'submit' => 'Cập nhật',
+    'add' => 'Thêm mới',
     'fail' => 'Có vấn đề',
     'addSucess' => 'Thêm nhân viên thành công',
     'editSucess' => 'Sửa nhân viên thành công',
     'deleteSucess' => 'Xóa nhân viên thành công',
+    'validate' => 'Vui lòng kiểm tra lại dữ liệu',
+    'required' => 'Không được để trống trường này',
+    'min' => 'Tên nhân viên không được ít hơn 6 kí tự',
+    'string' => 'Địa chỉ phải là dạng chữ',
 ];

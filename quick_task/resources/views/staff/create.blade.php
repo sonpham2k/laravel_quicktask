@@ -16,11 +16,8 @@
 
     @if ($errors->any())
     	<div class="alert alert-danger">
-    		<strong>Whoops!</strong> @lang('messages.fail') <br>
     		<ul>
-    			@foreach ($errors->all() as $error)
-    				<li> {{ $error }}</li>
-    			@endforeach
+    				@lang('messages.validate')
     		</ul>
     	</div>
     @endif
@@ -34,21 +31,34 @@
     				<strong>@lang('messages.name'):</strong>
     				<input type="text" name="staffname" class="form-control" placeholder="@lang('messages.fullname')">
     			</div>
+                @error('staffname')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
     		</div>
     		<div class="col-xs-12 col-sm-12 col-md-12">
     			<div class="form-group">
     				<strong>@lang('messages.address'):</strong>
     				<input type="text" name="address" class="form-control" placeholder="@lang('messages.address')">
     			</div>
+                @error('address')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
     		</div>
     		<div class="col-xs-12 col-sm-12 col-md-12">
     			<div class="form-group">
     				<strong>@lang('messages.department'):</strong>
-    				<input type="text" name="department" class="form-control" placeholder="@lang('messages.department')">
+                    <select class="form-select" aria-label="Default select example" placeholder="@lang('messages.department')">
+                        @foreach ($departments as $department)
+                          <option name="department" value="{{ $department->id }}">{{ $department->name }}</option>
+                        @endforeach
+                    </select>
     			</div>
+                @error('department')
+                    <span style="color: red">{{ $message }}</span>
+                @enderror
     		</div>
     		<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-    			<button type="submit" class="btn btn-primary"> @lang('messages.submit')</button>
+    			<button type="submit" class="btn btn-primary"> @lang('messages.add')</button>
     		</div>
     	</div>
     </form>

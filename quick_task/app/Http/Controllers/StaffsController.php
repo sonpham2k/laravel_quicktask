@@ -3,30 +3,34 @@
 namespace App\Http\Controllers;
 
 use App\Models\Staff;
+use App\Models\Department;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguagesController;
+use App\Http\Requests\ValidateRequest;
 
 class StaffsController extends Controller
 {
-    /* Hien thi danh sach nhan vien */
     public function index()
     {
-        $staffs = Staff::latest()->paginate(config('app.paginate'));
+        $data['staffs'] = Staff::simplePaginate(config('app.paginate'));
 
-        return view('staff.index', compact('staffs'));
+        return view('staff.index', $data);     
     }
 
     public function create()
     {
-       return view('staff.create');
+        $data['departments'] = Department::simplePaginate(config('app.paginate'));
+       return view('staff.create', $data);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, ValidateRequest $request2)
     {
+        dd($request2);
+
         Staff::create($request->all());
 
-        return redirect()->route('staff.index')->with('sucess');
+        return redirect()->route('staff.index');
     }
 
     public function show(Staff $staff)
@@ -36,20 +40,25 @@ class StaffsController extends Controller
 
     public function edit(Staff $staff)
     {
-        return view('staff.edit', compact('staff'));
+
+        $data['departments'] = Department::simplePaginate(config('app.paginate'));
+        return view('staff.edit', compact('staff'), $data);
     }
 
-    public function update(Request $request, Staff $staff)
+    public function update(Request $request, Staff $staff,ValidateRequest $request2)
     {
-        $staff->update($request->all());
+        dd($request2);
 
-        return redirect()->route('staff.index')->with('sucess');        
+        $request->offsetUnset('_token');
+        Staff::where(['id'=>($staff->id)])->update($request->all());
+
+        return redirect()->route('staff.index')->with('success');        
     }
 
     public function destroy(Staff $staff)
     {
         $staff->delete();
 
-        return redirect()->route('staff.index')->with('sucess');     
+        return redirect()->route('staff.index')->with('success');     
     }
 }
