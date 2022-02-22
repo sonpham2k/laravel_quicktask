@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('staff.create') }}"> @lang('messages.listStaff') </a>
+                <a class="btn btn-success" href="{{ route('staff.create') }}"> @lang('messages.addStaff') </a>
             </div>
         </div>
     </div>
@@ -44,4 +44,7 @@
         </tr>
         @endforeach
     </table>
+    <nav aria-label="Page navigation">
+        {!! $staffs->links() !!}
+    </nav>
 @endsection
