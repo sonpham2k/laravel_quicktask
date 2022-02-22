@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateRequest extends FormRequest
+class StaffRequest extends FormRequest
 {
-   
+
     public function authorize()
     {
         return true;
@@ -16,7 +16,7 @@ class ValidateRequest extends FormRequest
     {
         return [
             'staffname' => 'required|min:6',
-            'address' => 'required|string',
+            'address' => 'required',
             'department' => 'required'
         ];
     }
