@@ -1,15 +1,13 @@
-@extends('staff.layout') 
+@extends('layout') 
 
 @section('content')
-    <a href="{{ url('lang/vi') }}">Tiếng việt</a>
-    <a href="{{ url('lang/en') }}">English</a>
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
             	<h2> @lang('messages.addStaff') </h2>
             </div>
             <div class="pull-right">
-            	<a class="btn btn-primary" href="{{ route('staff.index') }}">@lang('messages.back')</a>
+            	<a class="btn btn-primary" href="{{ route('staffs.index') }}">@lang('messages.back')</a>
             </div>
         </div>
     </div>
@@ -22,7 +20,7 @@
     	</div>
     @endif
 
-    <form action="{{ route('staff.store') }}" method="POST">
+    <form action="{{ route('staffs.store') }}" method="POST">
     	@csrf
 
     	<div class="row">

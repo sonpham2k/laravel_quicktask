@@ -1,14 +1,14 @@
 <?php 
 
 return [
-    'listStaff' => 'Danh sách nhân viên',
+    'list' => 'Danh sách',
     'addStaff' => 'Thêm nhân viên',
     'editStaff' => 'Cập nhập thông tin nhân viên',
     'deleteStaff' => 'Xóa nhân viên',
     'name' => 'Tên',
     'address' => 'Địa chỉ',
     'department' => 'Phòng ban',
-    'actions' => 'Actions',
+    'actions' => 'Hành động',
     'edit' => 'Sửa',
     'delete' => 'Xóa',
     'back' => 'Quay lại',
@@ -23,4 +23,10 @@ return [
     'required' => 'Không được để trống trường này',
     'min' => 'Tên nhân viên không được ít hơn 6 kí tự',
     'string' => 'Địa chỉ phải là dạng chữ',
+    'listDepart' => 'Danh sách phòng ban',
+    'addDepart' => 'Thêm phòng ban',
+    'editDepart' => 'Sửa tên phòng ban',
+    'staff' => 'Nhân viên',
+    'department' => 'Phòng ban',
+    'deleteConfir' => 'Bạn có chắc muốn xóa',
 ];

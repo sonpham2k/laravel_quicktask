@@ -1,7 +1,7 @@
 <?php 
 
 return [
-    'listStaff' => 'List staff',
+    'list' => 'List',
     'addStaff' => 'Add Staff',
     'editStaff' => 'Edit Staff',
     'deleteStaff' => 'Delete Staff',
@@ -23,4 +23,10 @@ return [
     'required' => 'This field cannot be left blank',
     'min' => 'This field must be at least 6 characters',
     'string' => 'This field must be at string',
+    'listDepart' => 'List Department',
+    'addDepart' => 'Add Department',
+    'editDepart' => 'Edit name department',
+    'staff' => 'Staff',
+    'department' => 'Department',
+    'deleteConfir' => 'Are you sure delele',
 ];

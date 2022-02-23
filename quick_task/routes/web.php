@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\StaffsController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LanguagesController;
 
 
@@ -21,6 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('lang/{locale}', [LanguagesController::class, 'language']);
+Route::get('lang/{locale}', [LanguagesController::class, 'language'])->name('languages');
 
-Route::resource('staff', StaffsController::class);
+Route::resource('staffs', StaffsController::class);
+
+Route::resource('departments', DepartmentController::class);
